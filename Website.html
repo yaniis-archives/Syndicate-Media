@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syndicate Media - Premium Course Creation Agency</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bodoni+Moda:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#0A0A0A',
+secondary: '#000080'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body { font-family: 'Inter', sans-serif; }
+.bodoni { font-family: 'Bodoni Moda', serif; }
+.consultation-modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.5);
+z-index: 1000;
+}
+.consultation-modal.active {
+display: flex;
+}
+</style>
+</head>
+<body class="bg-primary text-white min-h-screen">
+<nav class="fixed w-full bg-primary/90 backdrop-blur-sm z-50">
+<div class="max-w-7xl mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<h1 class="text-2xl font-bold tracking-wider text-[#C0C0C0]">SYNDICATE MEDIA</h1>
+<div class="flex items-center space-x-8">
+<a href="#services" class="hover:text-[#FFD700] transition-colors">Services</a>
+<a href="#process" class="hover:text-[#FFD700] transition-colors">Process</a>
+<a href="#about" class="hover:text-[#FFD700] transition-colors">About</a>
+<button class="bg-[#000080] hover:bg-[#000060] text-white px-6 py-2 !rounded-button transition-colors whitespace-nowrap cursor-pointer" onclick="openConsultation()">Book Consultation</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="pt-32 pb-20 relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img src="https://unsplash.com/photos/man-using-computer-inside-room-qYMkkREOHa4" class="w-full h-full object-cover opacity-20" alt="Background">
+</div>
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+<div class="grid grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="bodoni text-6xl font-bold leading-tight mb-6">Transform Your Expertise Into Premium Digital Courses</h2>
+<p class="text-[#C0C0C0] text-xl mb-10">Partner with the leading agency specializing in premium course creation and audience growth strategies.</p>
+<button class="bg-[#000080] hover:bg-[#000060] text-white px-8 py-4 !rounded-button text-lg transition-colors whitespace-nowrap cursor-pointer" onclick="openConsultation()">Schedule Your Strategy Call</button>
+</div>
+<div>
+<img src="https://unsplash.com/photos/two-men-in-suits-shaking-hands-in-a-hallway-Qj39gznd_q4" class="rounded-lg shadow-2xl" alt="Course Creator">
+</div>
+</div>
+</div>
+</header>
+<section id="services" class="py-20 bg-[#0F0F0F]">
+<div class="max-w-7xl mx-auto px-6">
+<h3 class="bodoni text-4xl font-bold text-center mb-16">Our Premium Services</h3>
+<div class="grid grid-cols-3 gap-10">
+<div class="bg-primary p-8 rounded-lg border border-[#333333] hover:border-[#FFD700] transition-colors">
+<div class="w-12 h-12 flex items-center justify-center mb-6">
+<i class="ri-movie-line text-[#FFD700] text-3xl"></i>
+</div>
+<h4 class="text-xl font-semibold mb-4">Course Production</h4>
+<p class="text-[#C0C0C0]">Professional video production, content structuring, and curriculum development for maximum impact.</p>
+</div>
+<div class="bg-primary p-8 rounded-lg border border-[#333333] hover:border-[#FFD700] transition-colors">
+<div class="w-12 h-12 flex items-center justify-center mb-6">
+<i class="ri-group-line text-[#FFD700] text-3xl"></i>
+</div>
+<h4 class="text-xl font-semibold mb-4">Audience Growth</h4>
+<p class="text-[#C0C0C0]">Strategic marketing campaigns and community building to expand your reach and influence.</p>
+</div>
+<div class="bg-primary p-8 rounded-lg border border-[#333333] hover:border-[#FFD700] transition-colors">
+<div class="w-12 h-12 flex items-center justify-center mb-6">
+<i class="ri-funds-line text-[#FFD700] text-3xl"></i>
+</div>
+<h4 class="text-xl font-semibold mb-4">Launch Strategy</h4>
+<p class="text-[#C0C0C0]">Comprehensive launch planning and execution to maximize your course's market impact.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="process" class="py-20">
+<div class="max-w-7xl mx-auto px-6">
+<h3 class="bodoni text-4xl font-bold text-center mb-16">Our Process</h3>
+<div class="grid grid-cols-4 gap-6">
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-[#000080] flex items-center justify-center mx-auto mb-6">
+<span class="text-2xl font-bold">1</span>
+</div>
+<h4 class="text-xl font-semibold mb-4">Discovery</h4>
+<p class="text-[#C0C0C0]">In-depth analysis of your expertise and market opportunity</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-[#000080] flex items-center justify-center mx-auto mb-6">
+<span class="text-2xl font-bold">2</span>
+</div>
+<h4 class="text-xl font-semibold mb-4">Strategy</h4>
+<p class="text-[#C0C0C0]">Custom roadmap creation for your course success</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-[#000080] flex items-center justify-center mx-auto mb-6">
+<span class="text-2xl font-bold">3</span>
+</div>
+<h4 class="text-xl font-semibold mb-4">Production</h4>
+<p class="text-[#C0C0C0]">High-quality content creation and platform setup</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-[#000080] flex items-center justify-center mx-auto mb-6">
+<span class="text-2xl font-bold">4</span>
+</div>
+<h4 class="text-xl font-semibold mb-4">Launch</h4>
+<p class="text-[#C0C0C0]">Strategic marketing and successful course launch</p>
+</div>
+</div>
+</div>
+</section>
+<section id="about" class="py-20 bg-[#0F0F0F]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-2 gap-20 items-center">
+<div>
+<img src="https://unsplash.com/photos/two-men-in-suits-shaking-hands-in-a-hallway-Qj39gznd_q4" class="rounded-lg shadow-2xl" alt="Consultant">
+</div>
+<div>
+<h3 class="bodoni text-4xl font-bold mb-6">Meet Your Growth Strategist</h3>
+<p class="text-[#C0C0C0] text-lg mb-6">As a passionate strategist in digital education and course creation, I bring fresh perspectives and innovative approaches to help experts transform their knowledge into successful online courses.</p>
+<p class="text-[#C0C0C0] text-lg mb-10">My team and I combine cutting-edge strategies with personalized attention to create premium course experiences that truly stand out in today's competitive market.</p>
+<button class="bg-[#000080] hover:bg-[#000060] text-white px-8 py-4 !rounded-button text-lg transition-colors whitespace-nowrap cursor-pointer" onclick="openConsultation()">Book Your Free Strategy Call</button>
+</div>
+</div>
+</div>
+</section>
+<footer class="py-10 border-t border-[#333333]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-center">
+<p class="text-[#C0C0C0]">&copy; 2025 Syndicate Media. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-[#C0C0C0] hover:text-[#FFD700] transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-linkedin-fill text-xl"></i>
+</div>
+</a>
+<a href="#" class="text-[#C0C0C0] hover:text-[#FFD700] transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-x-fill text-xl"></i>
+</div>
+</a>
+<a href="#" class="text-[#C0C0C0] hover:text-[#FFD700] transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-fill text-xl"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<div class="consultation-modal" id="consultationModal">
+<div class="bg-primary p-8 rounded-lg max-w-lg w-full mx-auto my-auto relative">
+<button onclick="closeConsultation()" class="absolute top-4 right-4 text-[#C0C0C0] hover:text-white">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-close-line text-xl"></i>
+</div>
+</button>
+<h4 class="text-2xl font-bold mb-6">Schedule Your Free Strategy Call</h4>
+<form id="consultationForm" class="space-y-6">
+<div>
+<label class="block text-sm font-medium mb-2">Name</label>
+<input type="text" class="w-full bg-[#1A1A1A] border border-[#333333] rounded p-3 text-white" required>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2">Email</label>
+<input type="email" class="w-full bg-[#1A1A1A] border border-[#333333] rounded p-3 text-white" required>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2">Current Audience Size</label>
+<select class="w-full bg-[#1A1A1A] border border-[#333333] rounded p-3 text-white pr-8" required>
+<option value="">Select size</option>
+<option value="0-1k">0-1,000</option>
+<option value="1k-10k">1,000-10,000</option>
+<option value="10k-50k">10,000-50,000</option>
+<option value="50k+">50,000+</option>
+</select>
+</div>
+<button type="submit" class="w-full bg-[#000080] hover:bg-[#000060] text-white py-3 !rounded-button transition-colors">Submit</button>
+</form>
+</div>
+</div>
+<script>
+function openConsultation() {
+document.getElementById('consultationModal').classList.add('active');
+}
+function closeConsultation() {
+document.getElementById('consultationModal').classList.remove('active');
+}
+document.getElementById('consultationForm').addEventListener('submit', function(e) {
+e.preventDefault();
+closeConsultation();
+const successModal = document.createElement('div');
+successModal.className = 'fixed inset-0 flex items-center justify-center bg-black/50 z-50';
+successModal.innerHTML = `
+<div class="bg-primary p-8 rounded-lg max-w-md text-center">
+<div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-[#FFD700]">
+<i class="ri-check-line text-4xl"></i>
+</div>
+<h4 class="text-2xl font-bold mb-4">Thank You!</h4>
+<p class="text-[#C0C0C0] mb-6">We'll contact you within 24 hours to schedule your strategy call.</p>
+<button onclick="this.parentElement.parentElement.remove()" class="bg-[#000080] hover:bg-[#000060] text-white px-6 py-2 !rounded-button">Close</button>
+</div>
+`;
+document.body.appendChild(successModal);
+});
+</script>
+</body>
+</html>
